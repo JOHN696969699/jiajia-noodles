@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>佳佳涼麵 官方網站 - 傳承老師傅手藝的溫暖涼麵</title>
+    <style>
+        /* 日式清新文青風格配色 */
+        :root {
+            --bg-color: #F9F6F0; /* 溫暖米白 */
+            --text-color: #3A322D; /* 深木色 */
+            --primary-color: #4A6B5D; /* 日式墨綠 */
+            --accent-color: #D9A05B; /* 暖糖心蛋黃 */
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 導覽列 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 20px;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 首頁主視覺 */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(rgba(249, 246, 240, 0.85), rgba(249, 246, 240, 0.85)), url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1000') no-repeat center/cover; /* 示意背景 */
+        }
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #6E6259;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background-color: #3B5448;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* 區塊共同樣式 */
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 50px;
+            position: relative;
+            color: var(--primary-color);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        /* 品牌故事 */
+        .about {
+            background-color: var(--white);
+        }
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 17px;
+            color: #554A42;
+        }
+
+        /* 美味菜單 */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .menu-category {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border-top: 3px solid var(--accent-color);
+        }
+        .category-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            border-bottom: 1px dashed #E0D9D3;
+            padding-bottom: 5px;
+        }
+        .menu-item {
+            margin-bottom: 20px;
+        }
+        .menu-item h4 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+        .menu-item p {
+            font-size: 14px;
+            color: #7E7166;
+        }
+
+        /* 技術教學 */
+        .training {
+            background-color: #EFECE6;
+            text-align: center;
+        }
+        .training-content {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .training p {
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        /* 頁尾資訊 */
+        footer {
+            background-color: var(--text-color);
+            color: #D9D2CE;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 50px 0;
+        }
+        footer h3 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        footer p, footer a {
+            color: #C1B7B1;
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: block;
+        }
+        footer a:hover {
+            color: var(--white);
+        }
+        .notice {
+            background-color: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-left: 3px solid var(--accent-color);
+            margin-top: 15px;
+            font-size: 13px;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #4A403A;
+            padding: 20px 0;
+            color: #8E8178;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <div class="logo">佳佳涼麵</div>
+            <div class="nav-links">
+                <a href="#about">品牌故事</a>
+                <a href="#menu">美味菜單</a>
+                <a href="#training">技術教學</a>
+                <a href="#info">聯絡我們</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>傳承老師傅的手藝<br>這城市裡最溫暖的靈魂涼麵</h1>
+            <p>每日新鮮現煮，用一盤純粹的美味，陪伴一家人與您的每個日常。</p>
+            <a href="https://app.eats365pos.com/tw/twty000254" target="_blank" class="btn btn-primary">［線上點餐］傳送門</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=桃園市龜山區華亞三路211號" target="_blank" class="btn btn-secondary">［一鍵導航到店］</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">從新城市出發，一家人的奮鬥與傳承</h2>
+            <div class="about-content">
+                <p style="margin-bottom: 15px;">人生的中場轉換跑道，需要無比的勇氣。那一年，我們帶著家人來到這座全新的城市，為了生活、為了彼此，決定挽起袖子，一切從零開始。</p>
+                <p style="margin-bottom: 15px;">幸運的是，我們遇見了願意傾囊相授的老師傅。從<strong>獨立訂製麵條</strong>的選用、煮麵的火候、到醬汁的黃金比例，我們在廚房裡無數次揮汗嘗試，才終於完整傳承了這份扎實的「涼麵本事」。</p>
+                <p>佳佳涼麵不僅僅是一間店，更是我們一家人攜手打拼的避風港。我們用對家人的愛，做每一盤給您的麵。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu">
+        <div class="container">
+            <h2 class="section-title">每日現做・職人嚴選餐點</h2>
+            <div class="menu-grid">
+                <div class="menu-category">
+                    <div class="category-title">［ 招牌主打 ］</div>
+                    <div class="menu-item">
+                        <h4>佳佳招牌涼麵</h4>
+                        <p>嚴選獨立訂製麵條，每日新鮮現煮、急速冰鎮保持Q彈口感；淋上濃郁卻不膩口的祕製芝麻醬，搭配清脆小黃瓜絲，是最純粹的在地經典。</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>三合一味噌湯</h4>
+                        <p>吃涼麵的完美靈魂伴侶！香濃味噌湯底，融入滑嫩蛋花與爆汁貢丸，暖心又暖胃。</p>
+                    </div>
+                </div>
+                <div class="menu-category">
+                    <div class="category-title">［ 獨家靈魂配角 ］</div>
+                    <div class="menu-item">
+                        <h4>獨家糖心蛋</h4>
+                        <p>完美熟度的膏狀蛋黃，入口即化，帶有淡淡的甘甜豆香，是熟客每回必點的奢華滋味。</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>特製老滷豆乾</h4>
+                        <p>文火慢熬的老滷汁深深滲入豆乾孔隙，咬下去吸滿湯汁，越嚼越香，看似簡單卻功夫十足。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="training" class="training">
+        <div class="container">
+            <h2 class="section-title">手藝傳承・涼麵創業技術教學</h2>
+            <div class="training-content">
+                <p>我們走過轉換跑道的艱辛，深知創業需要的不只是熱情，更需要「扎實的技術」與「實戰心法」。佳佳涼麵現在將老師傅傳授的涼麵本事、醬汁配方、經營邏輯，毫无保留地分享給同樣想創業、想為家人打拼的你。免去自己摸索的冤枉路，從零開始建立屬於你的事業。</p>
+                <p style="font-weight: bold; color: #4A6B5D;">課程詳情、技術傳承費用及報名細節，歡迎加入官方 LINE，我們將有專人與您進一步諮詢。</p>
+                <a href="https://line.me/R/ti/p/%40400oyxup" target="_blank" class="btn btn-primary">［立即諮詢創業教學］（LINE: @400oyxup）</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="info">
+        <div class="container footer-grid">
+            <div>
+                <h3>關於・佳佳涼麵</h3>
+                <p>美味專線：02-66236930</p>
+                <p>官方 LINE：@400oyxup</p>
+                <p>店面地址：桃園市龜山區華亞三路211號<br><span style="font-size:12px; color:#9E9188;">(鄰近華亞科學園區/A7社區)</span></p>
+            </div>
+            <div>
+                <h3>營業時間</h3>
+                <p>週一至週六 11:00 - 21:00</p>
+                <div class="notice">
+                    💡 <strong>溫馨提醒</strong>：為了保持最佳口感，本店餐點皆為<strong>每日新鮮現煮</strong>。若提早販售完畢，將會提早打烊，造成不便敬請見諒！
+                </div>
+            </div>
+            <div>
+                <h3>快速連結</h3>
+                <a href="https://app.eats365pos.com/tw/twty000254" target="_blank">Eats365 線上訂餐 ↗</a>
+                <a href="https://line.me/R/ti/p/%40400oyxup" target="_blank">加入官方 LINE 諮詢 ↗</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 佳佳涼麵 版權所有.
+        </div>
+    </footer>
+
+</body>
+</html>
